@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/burger", function(req, res) {
+router.post("/api/burgers", function(req, res) {
   // we want to create a burger and track whether it has been eaten but at burger create process it will not yet be eaten so we enter in false
   burger.create([
     "name", "eaten"
@@ -29,7 +29,7 @@ router.post("/api/burger", function(req, res) {
 });
 
 // updating burger to be eaten on button click
-router.put("/api/burger/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
@@ -47,7 +47,7 @@ router.put("/api/burger/:id", function(req, res) {
 });
 
 // deleting burger
-router.delete("/api/burger/:id", function(req, res) {
+router.delete("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   burger.delete(condition, function(result) {

@@ -4,14 +4,14 @@ $(function() {
     var id = $(this).data("id");
     var newEaten = $(this).data("neweaten");
 
-    var newSleepState = {
-      sleepy: newEaten
+    var newEatState = {
+      burger: newEaten
     };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
-      data: newEatenState
+      data: newEatState
     }).then(
       function() {
         console.log("changed eaten to", newEat);
@@ -25,9 +25,8 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newEat = {
-      name: $("#ca").val().trim(),
-      sleepy: $("[name=sleepy]:checked").val().trim()
+    var newBurger = {
+      name: $("#ca").val().trim()
     };
 
     // Send the POST request.
@@ -47,7 +46,7 @@ $(function() {
     var id = $(this).data("id");
 
     // Send the DELETE request.
-    $.ajax("/api/burger/" + id, {
+    $.ajax("/api/burgers/" + id, {
       type: "DELETE"
     }).then(
       function() {
