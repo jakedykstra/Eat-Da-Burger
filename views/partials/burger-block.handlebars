@@ -1,0 +1,10 @@
+{{!-- listing the burgers with a button for whether they're eaten. Placing id into data-id so we can identify which one --}}
+<li>
+	{{name}}
+	{{#if eaten}}
+	<button class="change-eaten" data-id="{{id}}" data-neweaten="{{eaten}}">Eat Me!
+	</button>
+	{{/if}}
+
+	<button class="delete-burger" data-id="{{this.id}}">X</button>
+</li>
